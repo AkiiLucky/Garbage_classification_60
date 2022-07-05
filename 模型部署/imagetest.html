@@ -1,0 +1,71 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<form action="/imagetest/" method="post" enctype="multipart/form-data">-->
+<!--	<label for="">请上传图片:</label>-->
+<!--	<br>-->
+<!--	<input type="file" name="imagefile", height="224px", width="224px">-->
+<!--	<br>-->
+<!--	<input type="submit" value="提交">-->
+<!--	<br>-->
+<!--	我们的小程序-->
+<!--	<br>-->
+<!--	<img src="../static/images/aishoushou.jpg" alt="" width="224px" height="224px">-->
+<!--</form>-->
+
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>首页</title>
+    </head>
+    <body>
+    请上传需要识别的垃圾图片
+    <br><br>
+    <div id="box">
+        <form id="uploadForm" enctype="multipart/form-data" >
+            <input type="file" name="file">
+            <input type="button" value="识别" id="upFileBtn">
+        </form>
+    </div>
+
+	<br><br><br><br>
+    更多功能请访问我们的小程序
+    <br>
+	<img src="../static/images/aishoushou.jpg" alt="" width="224px" height="224px">
+    <div id="img1" style="height:25%;width:25%;"></div>
+
+    </body>
+
+    <script type="text/javascript" src="../static/js/jquery-3.6.0.js" ></script>
+    <script type="text/javascript">
+        $('#upFileBtn').click(function () {
+            var formFile = new FormData($('#uploadForm')[0])
+		     $.ajax({
+                url:"http://127.0.0.1:5000/imagetest",
+                type:"POST",
+                data:formFile,
+                dataType:'json',
+                processData:false,
+                contentType:false,
+                success: function (data) {
+                    console.log(data)
+                    alert(JSON.stringify(data))
+<!--                    document.getElementById('img1').innerHTML=data-->
+                },
+                error : function() {
+                    alert('上传失败');
+                }
+             })
+        })
+    </script>
+
+
+</html>
