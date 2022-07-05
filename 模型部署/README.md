@@ -1,12 +1,5 @@
-运行环境:
-python 3.6及以上
+# 运行环境: <br> python 3.6及以上
 
-安装依赖库:
-命令行输入
-pip install numpy
-pip install opencv-contrib-python
-pip3 install torch torchvision torchaudio
-pip install flask
+# 安装依赖库: <br> 命令行输入 <br> pip3 install numpy opencv-contrib-python torch torchvision torchaudio flask
 
-运行:
-app.py
+# 运行: <br> app.py
