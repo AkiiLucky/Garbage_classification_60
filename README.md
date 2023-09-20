@@ -4,4 +4,4 @@
 ## 模型：resnet18 
 ## 部署环境：Ubuntu 20.04 
 ## 后端框架：flask 
-## 测试网址：https://www.aishoushou.xyz 
+~~ ## 测试网址：https://www.aishoushou.xyz ~~
